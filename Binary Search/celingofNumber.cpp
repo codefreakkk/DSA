@@ -1,27 +1,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int orderAgnosticBinarySearch(vector<int> vc, int target) {
+celingOfNumber(vector<int> vc, int target) {
 
 	int start = 0;
 	int end = vc.size() - 1;
 
 	while(start <= end) {
 		int mid = (start + end) / 2;
-		if(target > vc[mid]) {
+		if(target < vc[mid]) {
 			end = mid - 1;
 		}
-		else if(target < vc[mid]) {
+		else if(target > vc[mid]) {
 			start = mid + 1;
 		}
 		else {
-			return mid;
+			return vc[mid];
 		}
 	}
-	return -1;
+	return vc[start];
 }
 
 int main() {
-	vector<int> vc = {5,4,3,2,1};
-	cout << orderAgnosticBinarySearch(vc, 0);
+	vector<int> vc = {2,3,5,9,14,16,18};
+	cout << celingOfNumber(vc, 80);
 }

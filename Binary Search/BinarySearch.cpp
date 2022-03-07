@@ -8,10 +8,10 @@ int binarySearch(vector<int> vc, int start, int n, int target) {
 	while(start <= end) {
 		int mid = (start + end) / 2;
 		if(target > vc[mid]) {
-			start = start + 1;
+			start = mid + 1;
 		}
 		else if(target < vc[mid]) {
-			end = end - 1;
+			end = mid - 1;
 		}
 		else {
 			return mid;
@@ -22,5 +22,5 @@ int binarySearch(vector<int> vc, int start, int n, int target) {
 
 int main() {
 	vector<int> vc = {1,2,3,4,5};
-	cout << binarySearch(vc, 0, 5, 90);	
+	cout << binarySearch(vc, 0, 5, 3);	
 }
